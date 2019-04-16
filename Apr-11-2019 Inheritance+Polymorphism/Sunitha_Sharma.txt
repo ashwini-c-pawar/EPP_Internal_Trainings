@@ -12,7 +12,7 @@ class Fruit
 {
 public String getFruit() {return "This is Fruit";}}
 class Apple extends Fruit{}
- 
+Â 
 public class Main {
 public static void main(String s[]) {
 Fruit f = new Fruit();
@@ -26,7 +26,7 @@ AGGREGATION --> It is weak form of ASSOCIATION.[HAS-A][Uni-directional]
 It is used to override a method in sub class from super class.
 Using this annotation is not a mandatory one..but it helps us to prevent errors by throwing compile time error when we are overriding methods incorrectly.
 
-To override files from different packages only public can be overriden .. private/static/final/default cannot be overriden
+To override files from different packages only public can be overriden .. private/static/final cannot be overriden
 Method to to be overriden is a public method
 ============================================
 package a;
