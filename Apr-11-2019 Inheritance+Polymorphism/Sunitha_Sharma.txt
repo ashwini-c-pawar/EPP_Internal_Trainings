@@ -1,0 +1,58 @@
+1) What is Composition, Association, Aggregation 
+ASSOCIATION --> It is an association or a relationship between objects.. [HAS-A] relation
+		Example: 1)One class can have one sub class also 2 or many subclasses : One Organization can either have 1/2/more employees and vice versa
+			 2) One Organization can either have 1/2/more project accounts and vice versa
+		If either of the class is deleted, each class can survive independently.
+
+COMPOSITION --> It is strong form of ASSOCIATION.[HAS-A] along with [part-of][Restricted form of Aggregation]
+		Example: A single question can have multiple answer but answer cannot belong to multiple question.
+			 A person having heart.. if person is deleted then heart will be destroyed.
+		Composition can support multiple inheritance using interface
+class Fruit
+{
+public String getFruit() {return "This is Fruit";}}
+class Apple extends Fruit{}
+ 
+public class Main {
+public static void main(String s[]) {
+Fruit f = new Fruit();
+f.getFruit();}}
+
+AGGREGATION --> It is weak form of ASSOCIATION.[HAS-A][Uni-directional]
+		Example: Clg-> many depts [Each dept (CSE/IT/EEE)] -> many students {In this case Vice-Versa is not possible}
+		If either of the class is deleted, each class can survive independently.
+---------------------------------------------------------------------------------------------------------------------
+2) @override
+It is used to override a method in sub class from super class.
+Using this annotation is not a mandatory one..but it helps us to prevent errors by throwing compile time error when we are overriding methods incorrectly.
+
+To override files from different packages only public can be overriden .. private/static/final/default cannot be overriden
+Method to to be overriden is a public method
+============================================
+package a;
+public class A{public void abc(){syso("Hello!")}}
+
+package b; 
+import a.Hello;
+public class B{ public void abc(){syso("Hi!!")}}
+
+Refer: https://www.codejava.net/java-core/the-java-language/12-rules-of-overriding-in-java-you-should-know
+
+Covariant return type, means that when a class overrides a method, the return type of the overriding method is allowed to be a subtype of the overridden method's return type.
+Example: https://javapapers.com/core-java/covariant-return-type-in-java/
+--------------------------------------------------------------------------------------------------------------------
+3) Overloading - return type is used or not 
+Return type alone is not enough to overload... return type can be ignored and must be concentrated on parameters
+class A {
+int val(int a){ 
+return a;
+}
+void val(int a) {}
+}
+public static void main (String args[])
+{
+A aa = new A ();
+aa.method(3);
+}
+		
+		
